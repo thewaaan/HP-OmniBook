@@ -272,7 +272,7 @@
             position: relative;
             font-size: 1.15rem;
             color: #333;
-            padding: 10px 0;
+            padding: 10px 0 45px 0;
             cursor: pointer;
             border-bottom: 1px solid #eee;
             transition: color 0.2s ease;
@@ -305,10 +305,10 @@
             border-radius: 5px;
             font-size: 0.95rem;
             white-space: normal;
-            width: 250px;
-            left: calc(100% + 15px);
-            top: 50%;
-            transform: translateY(-50%) scale(0.8);
+            width: 100%;
+            top: 100%;
+            left: 0;
+            transform: translateY(-10px);
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.3s ease, transform 0.3s ease;
@@ -318,15 +318,15 @@
 
         .port-item:hover .port-detail {
             opacity: 1;
-            transform: translateY(-50%) scale(1);
+            transform: translateY(0);
         }
 
         .port-detail::before {
             content: "";
             position: absolute;
-            top: 50%;
-            left: -8px;
-            transform: translateY(-50%) rotate(45deg);
+            top: -8px;
+            left: 20px;
+            transform: rotate(225deg);
             width: 15px;
             height: 15px;
             background-color: #121314;
@@ -479,8 +479,8 @@
 
     <section class="specs-section" id="specs">
         <div class="container">
-            <h2 class="text-center mb-5 fw-bold">Detailed Technical Specifications</h2>
-            <p class="text-center mb-5">
+            <h2 class="text-center mb-4 fw-bold">Detailed Technical Specifications</h2>
+            <p class="text-center mb-2">
                 <a href="assets/DataSheet.pdf" target="_blank" class="datasheet">HP OmniBook X FlipNGAI 16-ar0087nr</a>
             </p>
             <div class="row justify-content-center">
