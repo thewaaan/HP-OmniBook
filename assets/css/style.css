@@ -1,6 +1,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: rgb(255, 255, 255);
+    background: linear-gradient(135deg, rgb(146, 142, 131) 0%, rgb(184, 179, 167) 50%, rgb(255, 196, 67) 100%);
     padding-top: 56px;
 }
 
@@ -323,12 +323,12 @@ body {
     z-index: -1;
 }
 
-footer {
+.page-footer {
     background-color: rgba(255, 249, 194, 0.54);
     padding: 2rem 0;
 }
 
-footer p {
+.page-footer p {
     color: rgb(18, 19, 20);
     margin-bottom: 0;
 }
