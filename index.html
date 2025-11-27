@@ -7,349 +7,15 @@
     <title>HP OmniBook</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fff;
-        }
-
-        .navbar {
-            background-color: #fff9c28a;
-        }
-
-        .navbar-brand,
-        .nav-link {
-            color: #121314 !important;
-            font-weight: 600;
-        }
-
-        .nav-link:hover {
-            border-bottom: 2px solid #ffc443;
-        }
-
-        .product-overview-section {
-            width: 100%;
-            background-color: transparent;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        .video-hero-container {
-            box-shadow: 0 2px 8px #0000000d;
-            position: relative;
-            width: 100%;
-            height: 730px;
-            overflow: hidden;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-        }
-
-        #background-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -1;
-            transform: translate(-50%, -50%);
-            background-size: cover;
-        }
-
-        .video-overlay-content {
-            position: absolute;
-            bottom: 0;
-            left: 0%;
-            width: 100%;
-            background: linear-gradient(to top, #000000b3 0%, #0000004d 50%, #00000000 100%);
-            color: white;
-            padding: 2rem 0;
-            z-index: 1;
-            box-sizing: border-box;
-        }
-
-        .overlay-text-wrapper {
-            padding: 0 1rem;
-            text-align: left;
-            left: 10%;
-        }
-
-        .video-overlay-content h1 {
-            font-size: 2.8rem;
-            margin-bottom: 0.5rem;
-            line-height: 1.2;
-        }
-
-        .video-overlay-content p {
-            font-size: 1.1rem;
-            margin-bottom: 0;
-        }
-
-        .product-features-section {
-            padding-top: 6rem;
-            padding-bottom: 6rem;
-            background: linear-gradient(135deg, #928e83 0%, #b8b3a7 50%, #FFC443 100%);
-        }
-
-        .feature-item {
-            margin-bottom: 5rem;
-        }
-
-        .feature-text {
-            padding: 2rem;
-        }
-
-        .feature-text h3 {
-            font-size: 2.2rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: #333;
-        }
-
-        .feature-detail {
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .feature-icon {
-            max-width: 35px;
-            height: auto;
-            margin-bottom: 0.5rem;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            flex-shrink: 0;
-        }
-
-        .feature-detail p {
-            font-size: 1.1rem;
-            line-height: 1.5;
-            color: #555;
-            margin-left: 0;
-        }
-
-        .feature-image-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .feature-image-wrapper img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .specs-section {
-            padding: 60px 0;
-            background: linear-gradient(55deg, #928e83 0%, #b8b3a7 50%, #FFC443 100%);
-        }
-
-        .specs-section h2 {
-            color: #121314;
-        }
-
-        .datasheet {
-            color: #545a20;
-            font-weight: 500;
-            text-decoration: underline;
-            transition: color 0.2s;
-        }
-
-        .datasheet:hover {
-            color: #121314;
-            text-decoration: none;
-        }
-
-        .specs-grid-wrapper {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 15px;
-            padding: 20px 0;
-        }
-
-        .specs-grid-wrapper {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            padding: 20px 0;
-        }
-
-        .spec-item {
-            background-color: #fff;
-            padding: 18px 25px;
-            border-radius: 6px;
-            box-shadow: 0 2px 8px #0000000d;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            border-left: 5px solid #dee2e6;
-            transition: all 0.2s ease;
-        }
-
-        .spec-item:hover {
-            box-shadow: 0 4px 12px #0000001a;
-            border-left-color: #ffc443;
-        }
-
-        .spec-item.highlighted {
-            border-left-color: #ffc443;
-        }
-
-        .spec-label {
-            font-weight: bold;
-            color: #121314;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .spec-value {
-            color: #495057;
-            text-align: left;
-            font-weight: 400;
-            font-size: 1.05rem;
-            max-width: 65%;
-            flex-basis: 65%;
-        }
-
-        .ports-section {
-            padding: 60px 0;
-            background: linear-gradient(to bottom, #928e83 0%, #FFC443 100%);
-        }
-
-        .ports-card {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px #0000001a;
-            padding: 40px;
-        }
-
-        .ports-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #121314;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .ports-content-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
-        .ports-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .ports-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 4px;
-        }
-
-        .ports-list {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .ports-list ul {
-            margin: 0;
-            padding: 0;
-        }
-
-        .port-item {
-            position: relative;
-            font-size: 1.15rem;
-            color: #333;
-            padding: 10px 0 45px 0;
-            cursor: pointer;
-            border-bottom: 1px solid #eee;
-            transition: color 0.2s ease;
-        }
-
-        .port-item:last-child {
-            border-bottom: none;
-        }
-
-        .port-item:hover {
-            color: #ffc443;
-        }
-
-        .port-number {
-            font-weight: 700;
-            color: #121314;
-            margin-right: 8px;
-            font-size: 1.25rem;
-        }
-
-        .port-item:hover .port-number {
-            color: #ffc443;
-        }
-
-        .port-detail {
-            position: absolute;
-            background-color: #121314;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-size: 0.95rem;
-            white-space: normal;
-            width: 100%;
-            top: 100%;
-            left: 0;
-            transform: translateY(-10px);
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            z-index: 20;
-            box-shadow: 0 5px 15px #00000033;
-        }
-
-        .port-item:hover .port-detail {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .port-detail::before {
-            content: "";
-            position: absolute;
-            top: -8px;
-            left: 20px;
-            transform: rotate(225deg);
-            width: 15px;
-            height: 15px;
-            background-color: #121314;
-            z-index: -1;
-        }
-
-        footer {
-            background-color: #fff9c28a;
-            padding: 2rem 0;
-        }
-
-        footer p {
-            color: #121314 !important;
-            margin-bottom: 0;
-        }
-    </style>
+    <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top shadow">
+    <div class="navbar navbar-expand-lg fixed-top shadow">
         <div class="container">
             <a class="navbar-brand fw-bold fs-5" href="#">HP | OmniBook</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -360,27 +26,31 @@
                 </ul>
             </div>
         </div>
-    </nav>
-
-    <section class="product-overview-section" id="overview">
+    </div>
+    <div class="product-overview-div" id="overview">
         <div class="video-hero-container">
             <video autoplay muted loop id="background-video">
                 <source src="assets/hp_vid.mp4" type="video/mp4">
             </video>
             <div class="video-overlay-content">
-                <div>
-                    <div class="overlay-text-wrapper">
-                        <h1>Discover the Best AI Laptops from HP</h1>
-                        <p>With a bright 16" edge-to-edge touch display that can be used flipped, folded, or flat, the adaptable HP OmniBook X Flip 16 Next Gen AI PC guarantees that it's also 
-                            the most comfortable and productive, whether you're creating or being entertained. It's stylishly designed with recycled metal and features a contemporary backlit 
-                            keyboard with large keycaps.</p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="overlay-text-wrapper">
+                                <h1>Discover the Best AI Laptops from HP</h1>
+                                <p>With a bright 16" edge-to-edge touch display that can be used flipped, folded, or
+                                    flat, the adaptable HP OmniBook X Flip 16 Next Gen AI PC guarantees that it's also
+                                    the most comfortable and productive, whether you're creating or being entertained.
+                                    It's stylishly designed with recycled metal and features a contemporary backlit
+                                    keyboard with large keycaps.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="product-features-section py-5">
+    </div>
+    <div class="product-features-div py-5">
         <div class="container">
             <div class="row align-items-center mb-5 feature-item">
                 <div class="col-md-6 order-md-1">
@@ -410,7 +80,6 @@
                     <img src="assets/OmniBook.png" alt="HP 1" class="img-fluid">
                 </div>
             </div>
-
             <div class="row align-items-center mb-5 feature-item">
                 <div class="col-md-6 order-md-2">
                     <div class="feature-text">
@@ -437,7 +106,6 @@
                     <img src="assets/OmniBook1.png" alt="HP 2" class="img-fluid">
                 </div>
             </div>
-
             <div class="row align-items-center mb-5 feature-item">
                 <div class="col-md-6 order-md-1">
                     <div class="feature-text">
@@ -475,14 +143,18 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="specs-section" id="specs">
+    </div>
+    <div class="specs-div" id="specs">
         <div class="container">
-            <h2 class="text-center mb-4 fw-bold">Detailed Technical Specifications</h2>
-            <p class="text-center mb-2">
-                <a href="assets/DataSheet.pdf" target="_blank" class="datasheet">HP OmniBook X FlipNGAI 16-ar0087nr</a>
-            </p>
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <h2 class="text-center mb-4 fw-bold">Detailed Technical Specifications</h2>
+                    <p class="text-center mb-2">
+                        <a href="assets/DataSheet.pdf" target="_blank" class="datasheet">HP OmniBook X FlipNGAI
+                            16-ar0087nr</a>
+                    </p>
+                </div>
+            </div>
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="specs-grid-wrapper">
@@ -492,7 +164,8 @@
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">PROCESSOR</span>
-                            <span class="spec-value">AMD Ryzen™ AI 7 350 (up to 5.0 GHz max boost clock, 16 MB L3 cache, 8 cores, 16 threads)</span>
+                            <span class="spec-value">AMD Ryzen™ AI 7 350 (up to 5.0 GHz max boost clock, 16 MB L3 cache,
+                                8 cores, 16 threads)</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">GRAPHICS</span>
@@ -500,7 +173,8 @@
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">DISPLAY</span>
-                            <span class="spec-value">16" diagonal, 3K (2880 x 1800), OLED, multitouch-enabled, 48-120 Hz, 0.2 ms response time, UWVA, edge-to-edge glass, micro-edge, 
+                            <span class="spec-value">16" diagonal, 3K (2880 x 1800), OLED, multitouch-enabled, 48-120
+                                Hz, 0.2 ms response time, UWVA, edge-to-edge glass, micro-edge,
                                 Low Blue Light, SDR 400 nits, HDR 500 nits, 100% DCI-P3</span>
                         </div>
                         <div class="spec-item">
@@ -521,7 +195,8 @@
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">WIRELESS TECHNOLOGY</span>
-                            <span class="spec-value">MediaTek Wi-Fi 7 MT7925 (2x2) and Bluetooth® 5.4 wireless card</span>
+                            <span class="spec-value">MediaTek Wi-Fi 7 MT7925 (2x2) and Bluetooth® 5.4 wireless
+                                card</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">POWER SUPPLY</span>
@@ -541,12 +216,15 @@
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">BATTERY RECHARGE TIME</span>
-                            <span class="spec-value">Supports battery fast charge: approximately 50% in 45 minutes</span>
+                            <span class="spec-value">Supports battery fast charge: approximately 50% in 45
+                                minutes</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">EXTERNAL I/O PORTS</span>
-                            <span class="spec-value">2 USB Type-A 10Gbps signaling rate; 1 HDMI 2.1; 1 headphone/microphone combo; 1 USB Type-C® 40Gbps signaling rate (USB Power Delivery 3.1,
-                                DisplayPort™ 2.1, HP Sleep and Charge); 1 USB Type-C® 10Gbps signaling rate (USB Power Delivery 3.1, DisplayPort™ 2.1, HP Sleep and Charge)</span>
+                            <span class="spec-value">2 USB Type-A 10Gbps signaling rate; 1 HDMI 2.1; 1
+                                headphone/microphone combo; 1 USB Type-C® 40Gbps signaling rate (USB Power Delivery 3.1,
+                                DisplayPort™ 2.1, HP Sleep and Charge); 1 USB Type-C® 10Gbps signaling rate (USB Power
+                                Delivery 3.1, DisplayPort™ 2.1, HP Sleep and Charge)</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">ENERGY EFFICIENCY</span>
@@ -554,7 +232,8 @@
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">WEBCAM</span>
-                            <span class="spec-value">5MP IR camera with temporal noise reduction and integrated dual array digital microphones</span>
+                            <span class="spec-value">5MP IR camera with temporal noise reduction and integrated dual
+                                array digital microphones</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">AUDIO FEATURES</span>
@@ -586,12 +265,15 @@
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">SOFTWARE INCLUDED</span>
-                            <span class="spec-value">1-month Adobe free trial offer; McAfee Online Protection 30-day trial; PC Game Pass 3-month trial <br>
-                                Copilot in Windows with Copilot key<br> 1 month trial for new Microsoft 365 customers</span>
+                            <span class="spec-value">1-month Adobe free trial offer; McAfee Online Protection 30-day
+                                trial; PC Game Pass 3-month trial <br>
+                                Copilot in Windows with Copilot key<br> 1 month trial for new Microsoft 365
+                                customers</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">SECURITY MANAGEMENT</span>
-                            <span class="spec-value">Mic mute key; Camera privacy shutter; Trusted Platform Module (Firmware TPM) support</span>
+                            <span class="spec-value">Mic mute key; Camera privacy shutter; Trusted Platform Module
+                                (Firmware TPM) support</span>
                         </div>
                         <div class="spec-item">
                             <span class="spec-label">STYLUS</span>
@@ -605,9 +287,8 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="ports-section" id="ports">
+    </div>
+    <div class="ports-div" id="ports">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -619,30 +300,36 @@
                             </div>
                             <div class="ports-list">
                                 <ul class="list-unstyled">
-                                    <li class="port-item">
+                                    <div class="port-item">
                                         <span class="port-number">①</span> Headphone/Mic Combo Jack
-                                        <span class="port-detail">Connect your headphones, earbuds, or a headset with a microphone.</span>
-                                    </li>
-                                    <li class="port-item">
+                                        <span class="port-detail">Connect your headphones, earbuds, or a headset with a
+                                            microphone.</span>
+                                    </div>
+                                    <div class="port-item">
                                         <span class="port-number">②</span> USB Type-A 10Gbps
-                                        <span class="port-detail">A high-speed Type-A port for fast data transfer with external devices.</span>
-                                    </li>
-                                    <li class="port-item">
+                                        <span class="port-detail">A high-speed Type-A port for fast data transfer with
+                                            external devices.</span>
+                                    </div>
+                                    <div class="port-item">
                                         <span class="port-number">③</span> USB Type-A 10Gbps
-                                        <span class="port-detail">An additional high-speed Type-A port for peripheral connections.</span>
-                                    </li>
-                                    <li class="port-item">
+                                        <span class="port-detail">An additional high-speed Type-A port for peripheral
+                                            connections.</span>
+                                    </div>
+                                    <div class="port-item">
                                         <span class="port-number">④</span> HDMI 2.1
-                                        <span class="port-detail">A standard port for connecting to external displays and projectors, supporting high-resolution video.</span>
-                                    </li>
-                                    <li class="port-item">
+                                        <span class="port-detail">A standard port for connecting to external displays
+                                            and projectors, supporting high-resolution video.</span>
+                                    </div>
+                                    <div class="port-item">
                                         <span class="port-number">⑤</span> Thunderbolt™ 4 with USB Type-C® 40Gbps
-                                        <span class="port-detail">The most versatile port for ultra-fast data, power delivery, and connecting multiple high-resolution displays.</span>
-                                    </li>
-                                    <li class="port-item">
+                                        <span class="port-detail">The most versatile port for ultra-fast data, power
+                                            delivery, and connecting multiple high-resolution displays.</span>
+                                    </div>
+                                    <div class="port-item">
                                         <span class="port-number">⑥</span> USB Type-C® 10Gbps
-                                        <span class="port-detail">A versatile Type-C port for standard connections, data, and charging peripherals.</span>
-                                    </li>
+                                        <span class="port-detail">A versatile Type-C port for standard connections,
+                                            data, and charging peripherals.</span>
+                                    </div>
                                 </ul>
                             </div>
                         </div>
@@ -650,13 +337,17 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <footer class="py-4 mt-auto">
+    </div>
+    <div class="page-footer py-4 mt-auto">
         <div class="container text-center">
-            <p class="mb-0">&copy; 2025 HP OmniBook Showcase _ Althea Jade Gomez Condes. Content based on information from 2025 HPDevelopment Company, L.P.</p>
+            <div class="row">
+                <div class="col-12">
+                    <p class="mb-0">&copy; 2025 HP OmniBook Showcase _ Althea Jade Gomez Condes. Content based on
+                        information from 2025 HPDevelopment Company, L.P.</p>
+                </div>
+            </div>
         </div>
-    </footer>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
